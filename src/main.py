@@ -37,7 +37,7 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
-@app.route('/person', methods=['POST'])
+@app.route('/person', methods=['POST'])     # /person
 def handle_person():
 # First we get the payload json
     body = request.get_json()
@@ -51,6 +51,9 @@ def handle_person():
     user1 = Person(username=body['username'], email=body['email'])
     db.session.add(user1)
     db.session.commit()
+
+    #runtest(url,keyword)
+
     return "ok", 200
 
 
